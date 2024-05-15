@@ -35,8 +35,8 @@ export default function FixedBottomNavigation() {
             mx: "auto",
             border: "1px solid",
             borderColor: "divider",
-            borderRadius: 8,
-            backdropFilter: "blur(24px)",
+            borderRadius: 4,
+            backdropFilter: "blur(20px)",
           }}
           value={value}
           onChange={handleChange}

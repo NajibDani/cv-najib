@@ -1,4 +1,5 @@
 import * as React from "react";
+import Logo from "./img/Logo.png";
 
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -15,7 +16,7 @@ const logoStyle = {
   cursor: "pointer",
 };
 
-function AppAppBar({ mode, toggleColorMode }) {
+function AppAppBar() {
   const [setOpen] = React.useState(false);
 
   const scrollToSection = (sectionId) => {
@@ -52,7 +53,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               alignItems: "center",
               justifyContent: "space-between",
               flexShrink: 0,
-              borderRadius: "999px",
+              borderRadius: 4,
               backdropFilter: "blur(24px)",
               maxHeight: 40,
               border: "1px solid",
@@ -69,9 +70,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               }}
             >
               <img
-                src={
-                  "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"
-                }
+                src={Logo}
                 style={logoStyle}
                 alt="logo of sitemark"
               />

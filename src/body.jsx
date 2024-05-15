@@ -12,7 +12,6 @@ import {
   Grid,
   Typography,
   IconButton,
-  CardActions,
 } from "@mui/material";
 import PhotoProfil from "./img/pp.png";
 import { InsertLink } from "@mui/icons-material/";
@@ -50,15 +49,11 @@ function Body() {
                 companies. Good abilities to solve system problems. Interest at
                 artificial intelligence and web programming.
               </Typography>
-              <Box sx={{ textAlign: { xs: "center", md: "left" }}}>
-                <IconButton
-                  href="https://www.linkedin.com/in/najibdani"
-                >
+              <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+                <IconButton href="https://www.linkedin.com/in/najibdani">
                   <LinkedInIcon />
                 </IconButton>
-                <IconButton
-                  href="https://www.linkedin.com/in/najibdani"
-                >
+                <IconButton href="https://www.linkedin.com/in/najibdani">
                   <InstagramIcon />
                 </IconButton>
               </Box>
@@ -108,7 +103,11 @@ function Body() {
                     {experience.position}
                   </Typography>
                   <hr />
-                  <Typography variant="body1" fontWeight="medium" sx={{my:1}}>
+                  <Typography
+                    variant="body1"
+                    fontWeight="medium"
+                    sx={{ my: 1 }}
+                  >
                     {experience.institusi} | {experience.tahun}
                   </Typography>
                   <Typography variant="body2" sx={{ color: "grey.800" }}>
@@ -168,31 +167,19 @@ function Body() {
                     avatar={<Avatar alt="" src={PhotoProfil} />}
                     title={medium.penulis}
                     subheader={medium.tanggal}
+                    action={
+                      <IconButton aria-label="Link" href={medium.link}>
+                        <InsertLink />
+                      </IconButton>
+                    }
                   />
                   <CardMedia
                     component="img"
                     height="194"
                     image={medium.gambar}
                   />
-                  <CardContent>
-                    <Grid
-                      container
-                      sx={{
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Grid>
+                  <CardContent sx={{textAlign:"center"}}>
                         <Typography>{medium.judul}</Typography>
-                      </Grid>
-                      <Grid>
-                        <CardActions>
-                          <IconButton aria-label="Link" href={medium.link}>
-                            <InsertLink />
-                          </IconButton>
-                        </CardActions>
-                      </Grid>
-                    </Grid>
                   </CardContent>
                 </Card>
               </Grid>
