@@ -58,6 +58,7 @@ function AppAppBar() {
               maxHeight: 40,
               border: "1px solid",
               borderColor: "divider",
+              backgroundColor: "rgba(80, 141, 105, 0.5)"
             }}
           >
             <Box
