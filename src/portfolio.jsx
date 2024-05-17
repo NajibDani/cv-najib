@@ -5,37 +5,48 @@ import Card from "@mui/material/Card";
 import Chip from "@mui/material/Chip";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import DrawIcon from "@mui/icons-material/Draw";
 import WebAssetIcon from "@mui/icons-material/WebAsset";
 import AutoAwesomeMotionIcon from "@mui/icons-material/AutoAwesomeMotion";
-import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 
-import GraphicDesign from "./img/design.png";
+import AwesomeSlider from "react-awesome-slider";
+import "react-awesome-slider/dist/styles.css";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
+
+import Design1 from "./img/design1.png";
+import Design2 from "./img/design2.png";
+import Design3 from "./img/design3.png";
+
+import Ui1 from "./img/ui1.png";
+import Ui2 from "./img/ui2.png";
+import Ui3 from "./img/ui3.png";
+import Ui4 from "./img/ui4.png";
+
+const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const items = [
   {
     icon: <WebAssetIcon />,
     title: "UI/UX Design",
     description:
-      "This item could provide a snapshot of the most important metrics or data points related to the product.",
-    img: GraphicDesign,
+      "A collection of product designs I created using Figma, including web interfaces and mobile applications.",
+    imgPortofolio: [Ui1, Ui2, Ui3, Ui4],
   },
   {
     icon: <DrawIcon />,
     title: "Graphic Design",
     description:
       "This item could provide information about the mobile app version of the product.",
-    img: GraphicDesign,
+    imgPortofolio: [Design1, Design2, Design3],
   },
   {
     icon: <AutoAwesomeMotionIcon />,
     title: "Motion Graphic",
     description:
       "This item could let users know the product is available on all platforms, such as web, mobile, and desktop.",
-    img: GraphicDesign,
+    imgPortofolio: [Design2, Design2, Design2],
   },
 ];
 
@@ -49,7 +60,7 @@ export default function Features() {
   const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
+    <Container sx={{ py: { xs: 8, sm: 1 } }}>
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
@@ -89,7 +100,7 @@ export default function Features() {
             sx={{
               display: { xs: "auto", sm: "none" },
               mt: 4,
-              borderRadius:4
+              borderRadius: 4,
             }}
           >
             <Box
@@ -97,14 +108,19 @@ export default function Features() {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 minHeight: 280,
-                mb:1
+                mb: 1,
               }}
             >
-              <img
-                src={items[selectedItemIndex].img}
-                alt=""
-                style={{ width: "100%" }}
-              />
+              <AutoplaySlider
+                play={true}
+                cancelOnInteraction={false}
+                interval={1000}
+                bullets={false}
+              >
+                {items[selectedItemIndex].imgPortofolio.map((img) => (
+                  <div key={img} data-src={img} />
+                ))}
+              </AutoplaySlider>
             </Box>
             <Box sx={{ px: 2, pb: 2 }}>
               <Typography
@@ -121,23 +137,6 @@ export default function Features() {
               >
                 {selectedFeature.description}
               </Typography>
-              <Link
-                color="primary"
-                variant="body2"
-                fontWeight="bold"
-                sx={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  "& > svg": { transition: "0.2s" },
-                  "&:hover > svg": { transform: "translateX(2px)" },
-                }}
-              >
-                <span>Learn more</span>
-                <ChevronRightRoundedIcon
-                  fontSize="small"
-                  sx={{ mt: "1px", ml: "2px" }}
-                />
-              </Link>
             </Box>
           </Box>
           <Stack
@@ -171,7 +170,7 @@ export default function Features() {
                     gap: 2.5,
                   }}
                 >
-                  <Box sx={{}}>{icon}</Box>
+                  <Box>{icon}</Box>
                   <Box sx={{ textTransform: "none" }}>
                     <Typography
                       color="text.primary"
@@ -187,26 +186,6 @@ export default function Features() {
                     >
                       {description}
                     </Typography>
-                    <Link
-                      color="primary"
-                      variant="body2"
-                      fontWeight="bold"
-                      sx={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        "& > svg": { transition: "0.2s" },
-                        "&:hover > svg": { transform: "translateX(2px)" },
-                      }}
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                    >
-                      <span>Learn more</span>
-                      <ChevronRightRoundedIcon
-                        fontSize="small"
-                        sx={{ mt: "1px", ml: "2px" }}
-                      />
-                    </Link>
                   </Box>
                 </Box>
               </Card>
@@ -225,24 +204,20 @@ export default function Features() {
               height: "100%",
               width: "100%",
               display: { xs: "none", sm: "flex" },
-              pointerEvents: "none",
-              borderRadius:4
+              borderRadius: 4,
             }}
           >
-            <Box
-              sx={{
-                m: "auto",
-                height: "auto",
-                backgroundSize: "contain",
-                
-              }}
+            <AutoplaySlider
+              bullets={false}
+              play={true}
+              cancelOnInteraction={false}
+              interval={1000}
+              organicArrows={false}
             >
-              <img
-                src={items[selectedItemIndex].img}
-                alt=""
-                style={{ width: "100%" }}
-              />
-            </Box>
+              {items[selectedItemIndex].imgPortofolio.map((img) => (
+                <div key={img} data-src={img} />
+              ))}
+            </AutoplaySlider>
           </Card>
         </Grid>
       </Grid>

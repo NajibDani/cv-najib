@@ -19,6 +19,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Body() {
+
   return (
     <Box>
       {/* About Me */}
@@ -53,7 +54,7 @@ function Body() {
                 <IconButton href="https://www.linkedin.com/in/najibdani">
                   <LinkedInIcon />
                 </IconButton>
-                <IconButton href="https://www.linkedin.com/in/najibdani">
+                <IconButton href="https://www.instagram.com/najibdani21">
                   <InstagramIcon />
                 </IconButton>
               </Box>
@@ -77,48 +78,54 @@ function Body() {
       </Container>
 
       {/* My Experiences */}
-      <Container maxWidth="xxl" sx={{ my: 5 }}>
-        <Box>
-          <Typography variant="h4" sx={{ textAlign: "center", pb: 3 }}>
-            My Experience
-          </Typography>
-          <Grid container sx={{ justifyContent: "center" }}>
-            {Experiences.map((experience) => (
-              <Grid
-                key={experience}
-                xs={12}
-                md={4}
-                sx={{
-                  p: 2,
-                  m: 1,
-                  border: "1px solid",
-                  borderColor: "grey.400",
-                  borderRadius: 4,
-                }}
-                variant="elevation"
-                component={Card}
-              >
-                <Box>
-                  <Typography variant="h6" fontWeight="medium" gutterBottom>
-                    {experience.position}
-                  </Typography>
-                  <hr />
-                  <Typography
-                    variant="body1"
-                    fontWeight="medium"
-                    sx={{ my: 1 }}
-                  >
-                    {experience.institusi} | {experience.tahun}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: "grey.800" }}>
-                    {experience.desc}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Container>
+      <Box sx={{ bgcolor: "rgba(80, 141, 105, 1)", py: 6 }}>
+        <Container maxWidth="xxl" sx={{ my: 5 }}>
+          <Box>
+            <Typography
+              variant="h4"
+              sx={{ textAlign: "center", pb: 3, color: "#FFF7FC" }}
+            >
+              My Experience
+            </Typography>
+            <Grid container sx={{ justifyContent: "center" }}>
+              {Experiences.map((experience) => (
+                <Grid
+                  key={experience}
+                  xs={12}
+                  md={4}
+                  sx={{
+                    p: 2,
+                    m: 1,
+                    boxShadow: 4,
+                    borderRadius: 4,
+                    bgcolor: "rgba(255, 247, 252, 0.7)",
+                    backdropFilter: "blur(24px)",
+                  }}
+                  variant="elevation"
+                  component={Card}
+                >
+                  <Box>
+                    <Typography variant="h6" fontWeight="medium" gutterBottom>
+                      {experience.position}
+                    </Typography>
+                    <hr />
+                    <Typography
+                      variant="body1"
+                      fontWeight="medium"
+                      sx={{ my: 1 }}
+                    >
+                      {experience.institusi} | {experience.tahun}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "grey.800" }}>
+                      {experience.desc}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+      </Box>
 
       {/* My Skills */}
       <Container sx={{ my: 5 }}>
@@ -178,8 +185,8 @@ function Body() {
                     height="194"
                     image={medium.gambar}
                   />
-                  <CardContent sx={{textAlign:"center"}}>
-                        <Typography>{medium.judul}</Typography>
+                  <CardContent sx={{ textAlign: "center" }}>
+                    <Typography>{medium.judul}</Typography>
                   </CardContent>
                 </Card>
               </Grid>
