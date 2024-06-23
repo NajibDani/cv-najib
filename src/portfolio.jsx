@@ -118,7 +118,9 @@ export default function Features() {
                 bullets={false}
               >
                 {items[selectedItemIndex].imgPortofolio.map((img) => (
-                  <div key={img} data-src={img} />
+                  <div key={img} data-src={img}>
+                    <p>Hello World</p>
+                  </div>
                 ))}
               </AutoplaySlider>
             </Box>
@@ -215,7 +217,9 @@ export default function Features() {
               organicArrows={false}
             >
               {items[selectedItemIndex].imgPortofolio.map((img) => (
-                <div key={img} data-src={img} />
+                <div key={img} data-src={img}>
+                  <p>Hello World</p>
+                </div>
               ))}
             </AutoplaySlider>
           </Card>

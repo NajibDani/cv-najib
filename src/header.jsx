@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 const pages = ["About Me", "Education", "Experience", "Portfolio"];
 
 const logoStyle = {
-  width: "140px",
+  width: "50px",
   height: "auto",
   cursor: "pointer",
 };
@@ -53,7 +53,7 @@ function AppAppBar() {
               alignItems: "center",
               justifyContent: "space-between",
               flexShrink: 0,
-              borderRadius: 4,
+              borderRadius: 8,
               backdropFilter: "blur(24px)",
               maxHeight: 40,
               border: "1px solid",
