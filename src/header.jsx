@@ -1,5 +1,4 @@
 import * as React from "react";
-import Logo from "./img/Logo.png";
 
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -7,14 +6,30 @@ import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
+import Scrollspy from 'react-scrollspy';
 
-const pages = ["About Me", "Education", "Experience", "Portfolio"];
+const pages = [
+  {
+    section: "About Me",
+    idSection: "#AboutMe"
+  },
+  {
+    section: "Experience",
+    idSection: "#Experience"
+  },
+  {
+    section: "Portfolio",
+    idSection: "#Portfolio"
+  },
+];
 
-const logoStyle = {
-  width: "50px",
-  height: "auto",
-  cursor: "pointer",
-};
+<Scrollspy items={ ['About Me', 'Experience', 'Portfolio'] } currentClassName="is-current"></Scrollspy>
+
+// const logoStyle = {
+//   width: "50px",
+//   height: "auto",
+//   cursor: "pointer",
+// };
 
 function AppAppBar() {
   const [setOpen] = React.useState(false);
@@ -58,7 +73,7 @@ function AppAppBar() {
               maxHeight: 40,
               border: "1px solid",
               borderColor: "divider",
-              bgcolor:"rgba(255, 247, 252, 0.4)"
+              bgcolor: "rgba(255, 247, 252, 0.4)"
             }}
           >
             <Box
@@ -67,14 +82,9 @@ function AppAppBar() {
                 display: "flex",
                 width: "auto",
                 px: 2,
-                justifyContent: "space-between",
+                justifyContent: "center",
               }}
             >
-              <img
-                src={Logo}
-                style={logoStyle}
-                alt="logo of sitemark"
-              />
               <Box
                 sx={{
                   display: { xs: "none", md: "flex" },
@@ -84,11 +94,20 @@ function AppAppBar() {
                   <MenuItem
                     key={page}
                     onClick={() => scrollToSection("features")}
-                    sx={{ py: "6px", px: "12px" }}
+                    sx={{
+                      px: "12px",
+                      '&:hover':{
+                        bgcolor: "rgba(80, 141, 105, 1)",
+                        borderRadius:25,
+                        color:"white",
+                      }
+                    }}
                   >
-                    <Typography variant="body2" color="text.primary">
-                      {page}
-                    </Typography>
+                    <a href={page.idSection} style={{ textDecoration: "none" }} >
+                      <Typography variant="body2" color="text.primary">
+                        {page.section}
+                      </Typography>
+                    </a>
                   </MenuItem>
                 ))}
               </Box>
