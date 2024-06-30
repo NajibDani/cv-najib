@@ -13,7 +13,6 @@ import AutoAwesomeMotionIcon from "@mui/icons-material/AutoAwesomeMotion";
 
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-// import CaptionedStyles from 'react-awesome-slider/dist/captioned.css';
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 
 import Design1 from "./img/design1.png";
@@ -25,8 +24,8 @@ import Ui2 from "./img/ui2.png";
 import Ui3 from "./img/ui3.png";
 import Ui4 from "./img/ui4.png";
 
-import logo_illustrator from "./img/illustrator.png";
-import logo_figma from "./img/figma.png";
+// import logo_illustrator from "./img/illustrator.png";
+// import logo_figma from "./img/figma.png";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -36,44 +35,14 @@ const items = [
     title: "UI/UX Design",
     description:
       "A collection of product designs I created using Figma, including web interfaces and mobile applications.",
-    imgPortofolio: [
-      {
-        PortoImg : Ui1,
-        sourceApp : logo_figma
-      },
-      {
-        PortoImg : Ui2,
-        sourceApp : logo_figma
-      },
-      {
-        PortoImg : Ui3,
-        sourceApp : logo_figma
-      },
-      {
-        PortoImg : Ui4,
-        sourceApp : logo_figma
-      },
-    ],
+    imgPortofolio: [Ui1, Ui2, Ui3, Ui4],
   },
   {
     icon: <DrawIcon />,
     title: "Graphic Design",
     description:
       "A collection of graphic designs I created using Adobe Illustrator, Figma, and CorelDraw, including logos, posters, banners, and more.",
-      imgPortofolio: [
-        {
-          PortoImg : Design1,
-          sourceApp : logo_illustrator
-        },
-        {
-          PortoImg : Design2,
-          sourceApp : logo_illustrator
-        },
-        {
-          PortoImg : Design3,
-          sourceApp : logo_illustrator
-        },
-      ],
+      imgPortofolio: [Design1, Design2, Design3],
   },
   {
     icon: <AutoAwesomeMotionIcon />,
@@ -152,8 +121,7 @@ export default function Features() {
                 bullets={false}
               >
                 {items[selectedItemIndex].imgPortofolio.map((img) => (
-                  <div key={img} data-src={img.PortoImg}>
-                    <p>{img.sourceApp}</p>
+                  <div key={img} data-src={img}>
                   </div>
                 ))}
               </AutoplaySlider>
@@ -251,9 +219,7 @@ export default function Features() {
               organicArrows={false}
             >
               {items[selectedItemIndex].imgPortofolio.map((img) => (
-                <div data-src={img.PortoImg}>
-                  <p>hellow</p>
-                  {/* <img src={img.sourceApp} alt="" srcset="" /> */}
+                <div data-src={img}>
                 </div>
               ))}
             </AutoplaySlider>

@@ -25,11 +25,11 @@ function Body() {
   return (
     <Box>
       {/* Banner */}
-      <Container sx={{ pt: { xs: 2, md: 15 }, pb: { xs: 2, md: 10 }}}>
+      <Container sx={{ pt: { xs: 2, md: 15 }, pb: { xs: 2, md: 10 } }}>
         <Box component="Banner" id="Banner" >
           <Grid
             container
-            sx={{ justifyContent: "center", alignItems: "center", py: 5,}}
+            sx={{ justifyContent: "center", alignItems: "center", py: 5, }}
           >
             <Grid md={6} xs={12} order={{ xs: 2, md: 1 }} sx={{ my: 2 }}>
               <Typography
@@ -73,8 +73,8 @@ function Body() {
       </Container>
 
       {/* My Skills */}
-      <Container sx={{ my: 5 }}>
-        <Box>
+      <Box sx={{ my: 5, bgcolor: "rgba(80, 141, 105, 1)", py: 10 }}>
+        <Container>
           <Typography variant="h4" sx={{ textAlign: "center" }}>
             My Skills
           </Typography>
@@ -102,11 +102,11 @@ function Body() {
               </Grid>
             ))}
           </Grid>
-        </Box>
-      </Container>
+        </Container>
+      </Box>
 
       {/* About Me */}
-      <Container sx={{ pt: { xs: 2, md: 10 }, }}>
+      <Container sx={{ py: 10, }}>
         <Box component="AboutMe" id="AboutMe">
           <Grid
             container
@@ -134,16 +134,10 @@ function Body() {
               >
                 About Me
               </Typography>
-              {/* <Typography
-                variant="h5"
-                sx={{ my: 2, textAlign: { xs: "center", md: "left" } }}
-              >
-                Front End Developer | UI & UX Designer | Graphic Designer
-              </Typography> */}
-              <Box sx={{my:3}}>
-                <Chip label="Creative" />
-                <Chip label="Creative" sx={{mx:1}}/>
-                <Chip label="Creative" />
+              <Box sx={{ my: 3 }}>
+                <Chip label="Creative" sx={{bgcolor:"#FFC700"}}/>
+                <Chip label="Fast Learning" sx={{ mx: 1, bgcolor:"#EE4E4E", color:"white"}} />
+                <Chip label="Innovative" sx={{bgcolor:"#3FA2F6", color:"white"}}/>
               </Box>
               <Typography sx={{ my: 2, textAlign: "justify" }}>
                 Bachelor Degree in informatics engineering. At 2021 graduated
@@ -152,21 +146,13 @@ function Body() {
                 companies. Good abilities to solve system problems. Interest at
                 artificial intelligence and web programming.
               </Typography>
-              {/* <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
-                <IconButton href="https://www.linkedin.com/in/najibdani" target="_blank">
-                  <LinkedInIcon />
-                </IconButton>
-                <IconButton href="https://www.instagram.com/najibdani21" target="_blank">
-                  <InstagramIcon />
-                </IconButton>
-              </Box> */}
             </Grid>
           </Grid>
         </Box>
       </Container>
 
       {/* My Experiences */}
-      <Box sx={{ bgcolor: "rgba(80, 141, 105, 1)", py: 6 }} id="Experience">
+      <Box sx={{ bgcolor: "rgba(80, 141, 105, 1)", py: 10 }} id="Experience">
         <Container maxWidth="xxl" sx={{ my: 5 }}>
           <Box>
             <Typography
@@ -216,7 +202,7 @@ function Body() {
       </Box>
 
       {/* My Medium */}
-      <Container sx={{ my: 5 }}>
+      <Container sx={{ my: 5, py: 10 }}>
         <Box>
           <Typography variant="h4" sx={{ textAlign: "center" }}>
             My Medium
@@ -251,7 +237,7 @@ function Body() {
       </Container>
 
       {/* My Portfolio */}
-      <Portfolio id="Portfolio" />
+      <Portfolio id="Portfolio" sx={{ py: 10 }} />
     </Box>
   );
 }

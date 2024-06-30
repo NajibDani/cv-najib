@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Copyright() {
   return (
@@ -65,7 +65,7 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/mui"
+            href="https://github.com/NajibDani"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
@@ -73,15 +73,15 @@ export default function Footer() {
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://twitter.com/MaterialUI"
+            href="https://www.instagram.com/najibdani21"
             aria-label="X"
             sx={{ alignSelf: 'center' }}
           >
-            <TwitterIcon />
+            <InstagramIcon />
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://www.linkedin.com/company/mui/"
+            href="https://www.linkedin.com/in/najibdani"
             aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >

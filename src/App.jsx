@@ -7,10 +7,10 @@ import ButtomNav from "./bottomNavigation";
 const App = () => {
   return (
     <div>
+      <ButtomNav />
       <Header />
       <Body />
       <Footer />
-      <ButtomNav />
     </div>
   );
 };

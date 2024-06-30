@@ -29,7 +29,7 @@ export default function FixedBottomNavigation() {
       >
         <BottomNavigation
           sx={{
-            bgcolor: "transparent",
+            bgcolor: "rgba(255, 247, 252, 0.5)",
             backgroundImage: "none",
             width: "100%",
             mx: "auto",
